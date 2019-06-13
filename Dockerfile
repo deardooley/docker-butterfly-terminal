@@ -11,7 +11,7 @@ ENV CLIFF_FIT_WIDTH 1
 # Add kubectl and bash completion
 RUN curl -L https://storage.googleapis.com/kubernetes-release/release/v1.14.0/bin/linux/amd64/kubectl -o /usr/bin/kubectl && \
     chmod +x /usr/bin/kubectl && \
-    echo -e "\n" >> /root/.bashrc && \
+    echo "\n" >> /root/.bashrc && \
     echo "# Adding kubectl alias and bash completion" >> /root/.bashrc && \
     echo "alias k=kubectl" >> /root/.bashrc && \
     echo "complete -o default -F __start_kubectl k" >> /root/.bashrc; \
@@ -23,12 +23,12 @@ RUN curl -L https://storage.googleapis.com/kubernetes-release/release/v1.14.0/bi
     cp vault /usr/bin/vault && \
     chmod +x /usr/bin/vault && \
     rm vault.zip vault && \
-    echo -e "\n" >> /root/.bashrc && \
+    echo "\n" >> /root/.bashrc && \
     echo "# Adding vault bash completion" >> /root/.bashrc && \
     echo "complete -C /usr/local/homebrew/bin/vault vault" >> /root/.bashrc; \
     \
     # Default to python3 \
-    echo -e "\n" >> /root/.bashrc && \
+    echo "\n" >> /root/.bashrc && \
     echo "# Defaulting to python3" >> /root/.bashrc && \
     echo "alias python=python3" >> /root/.bashrc && \
     echo "alias pip=pip3" >> /root/.bashrc
